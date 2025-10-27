@@ -1,4 +1,5 @@
 import { Product } from "@/lib/mockdata";
+import { formatPrice } from "@/lib/utils";
 import Image from "next/image";
 export default function ProductCard({ product }: { product: Product }) {
   return (
@@ -14,7 +15,7 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
       <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
       <p className="text-gray-600 mb-2">{product.description}</p>
-      <p className="text-lg font-bold">${product.price.toFixed(2)}</p>
+      <p className="text-lg font-bold">{formatPrice(product.price)}</p>
     </div>
   );
 }
